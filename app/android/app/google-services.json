@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "590634795311",
+    "project_id": "funeralcall-mobile-app",
+    "storage_bucket": "funeralcall-mobile-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590634795311:android:19fbb6b87b51b93aa261da",
+        "android_client_info": {
+          "package_name": "com.omnienterprises.funeralcall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590634795311-aqv3f6lks1m6ebcs0qaghpl6qssi1i3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.omnienterprises.funeralcall",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "590634795311-roqetoub9qe2ju3tfhcpvoes73hnlimv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMACcVcaEmloXcY5PJI-j5U1oLtU_eYVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "590634795311-roqetoub9qe2ju3tfhcpvoes73hnlimv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "590634795311-ap94417stno8kupl2fagjark52q3s9l2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.omnicall.funeralcall"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
