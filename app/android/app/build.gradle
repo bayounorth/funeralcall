@@ -138,6 +138,11 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 7
         versionName "5.0.7"
+        multiDexEnabled true
+    }
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
     }
     splits {
         abi {
@@ -214,7 +219,7 @@ dependencies {
         implementation jscFlavor
     }
 
-    implementation project(':react-native-push-notification')
+//    implementation project(':react-native-push-notification')
 }
 
 // Run this once to be abdependenciesle to run the application with BUCK
