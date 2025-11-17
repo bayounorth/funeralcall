@@ -234,34 +234,27 @@ task copyDownloadableDepsToLibs(type: Copy) {
 afterEvaluate {
     def jsBundleTask = tasks.findByName("bundleReleaseJsAndAssets")
     if (jsBundleTask != null) {
-        jsBundleTask.dependsOn(
-                // async-storage
-                ":react-native-async-storage_async-storage:compileReleaseJavaWithJavac",
-                ":react-native-async-storage_async-storage:packageReleaseResources",
-                ":react-native-async-storage_async-storage:generateReleaseResValues",
-                ":react-native-async-storage_async-storage:generateReleaseBuildConfig",
-                ":react-native-async-storage_async-storage:writeReleaseAarMetadata",
-                ":react-native-async-storage_async-storage:mergeReleaseJniLibFolders",
-                ":react-native-async-storage_async-storage:copyReleaseJniLibsProjectOnly",
-                ":react-native-async-storage_async-storage:mergeReleaseNativeLibs",
-                ":react-native-async-storage_async-storage:bundleLibRuntimeToDirRelease",
+        def deps = []
 
-                // masked-view
-                ":react-native-community_masked-view:compileReleaseJavaWithJavac",
-                ":react-native-community_masked-view:writeReleaseAarMetadata",
-                ":react-native-community_masked-view:mergeReleaseJniLibFolders",
-                ":react-native-community_masked-view:copyReleaseJniLibsProjectOnly",
-                ":react-native-community_masked-view:mergeReleaseNativeLibs",
-                ":react-native-community_masked-view:bundleLibRuntimeToDirRelease",
+        // List of RN Android library projects to make sure are built before bundling JS
+        [
+                ":react-native-async-storage_async-storage",
+                ":react-native-community_masked-view",
+                ":react-native-firebase_app",
+                ":react-native-firebase_crashlytics",
+                ":react-native-firebase_messaging"
+        ].each { path ->
+            def libProject = project.findProject(path)
+            if (libProject != null) {
+                libProject.tasks.matching { it.name.toLowerCase().contains("release") }.all { t ->
+                    deps << t
+                }
+            }
+        }
 
-                // firebase app
-                ":react-native-firebase_app:compileReleaseJavaWithJavac",
-                ":react-native-firebase_app:packageReleaseResources",
-                ":react-native-firebase_app:generateReleaseResValues",
-                ":react-native-firebase_app:generateReleaseBuildConfig",
-                ":react-native-firebase_app:writeReleaseAarMetadata"
-        )
+        jsBundleTask.dependsOn deps
     }
 }
+
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
