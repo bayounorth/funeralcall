@@ -231,7 +231,6 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.implementation
     into 'libs'
 }
-
 afterEvaluate {
     def jsBundleTask = tasks.findByName("bundleReleaseJsAndAssets")
     if (jsBundleTask != null) {
@@ -249,6 +248,11 @@ afterEvaluate {
 
                 // masked-view
                 ":react-native-community_masked-view:compileReleaseJavaWithJavac",
+                ":react-native-community_masked-view:writeReleaseAarMetadata",
+                ":react-native-community_masked-view:mergeReleaseJniLibFolders",
+                ":react-native-community_masked-view:copyReleaseJniLibsProjectOnly",
+                ":react-native-community_masked-view:mergeReleaseNativeLibs",
+                ":react-native-community_masked-view:bundleLibRuntimeToDirRelease",
 
                 // firebase app
                 ":react-native-firebase_app:compileReleaseJavaWithJavac",
@@ -259,6 +263,5 @@ afterEvaluate {
         )
     }
 }
-
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
