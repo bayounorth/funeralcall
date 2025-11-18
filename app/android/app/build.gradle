@@ -231,26 +231,34 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.implementation
     into 'libs'
 }
+
+
 afterEvaluate {
 
+    // Make sure key tasks wait for the JS bundle copy
     tasks.matching { it.name == "mergeExtDexRelease" }.configureEach {
         dependsOn("copyReleaseBundledJs")
     }
 
-    // (Optional but harmless) also hook a few other tasks that complain in RN builds
-    tasks.matching { it.name == "mergeReleaseJavaResource" ||
-            it.name == "mergeReleaseNativeLibs" ||
-            it.name == "stripReleaseDebugSymbols" ||
-            it.name == "processReleaseManifestForPackage" }.configureEach {
+    tasks.matching { it.name == "compressReleaseAssets" }.configureEach {
         dependsOn("copyReleaseBundledJs")
     }
 
+    // Optional but harmless: other tasks that sometimes touch bundled output
+    tasks.matching {
+        it.name == "mergeReleaseJavaResource" ||
+                it.name == "mergeReleaseNativeLibs" ||
+                it.name == "stripReleaseDebugSymbols" ||
+                it.name == "processReleaseManifestForPackage"
+    }.configureEach {
+        dependsOn("copyReleaseBundledJs")
+    }
 
+    // Ensure RN libs build before JS bundling (your existing logic)
     def jsBundleTask = tasks.findByName("bundleReleaseJsAndAssets")
     if (jsBundleTask != null) {
         def deps = []
 
-        // List of RN Android library projects to make sure are built before bundling JS
         [
                 ":react-native-async-storage_async-storage",
                 ":react-native-community_masked-view",
@@ -269,6 +277,8 @@ afterEvaluate {
         jsBundleTask.dependsOn deps
     }
 }
+
+
 
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
