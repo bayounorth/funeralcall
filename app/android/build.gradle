@@ -68,10 +68,11 @@ subprojects { subproject ->
             enabled = false
         }
 
-        // NEW: disable lintFixRelease for react-native-gesture-handler
-        if (subproject.name == "react-native-gesture-handler") {
+        if (subproject.name == "react-native-translucent-modal" ||
+                subproject.name == "react-native-gesture-handler") {
+
             tasks.matching { task ->
-                task.name == "lintFixRelease"
+                task.name == "lintRelease"
             }.configureEach {
                 enabled = false
             }
