@@ -274,7 +274,8 @@ afterEvaluate {
                 ":react-native-gesture-handler",
                 ":react-native-safe-area-context",
                 ":react-native-screens",
-                ":react-native-translucent-modal"
+                ":react-native-translucent-modal",
+                ":react-native-vector-icons"
         ].each { path ->
             def libProject = project.findProject(path)
             if (libProject != null) {
