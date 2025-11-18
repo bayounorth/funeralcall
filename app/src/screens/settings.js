@@ -14,7 +14,7 @@ import APIService from '../services/apiService';
 import DeviceInfo from 'react-native-device-info';
 import FormFieldText from '../components/formFieldText';
 import messaging from '@react-native-firebase/messaging';
-import { Audio } from 'expo-av';
+
 import Toast from 'react-native-simple-toast';
 import DialogOKCancel from '../dialogs/dialogOKCancel';
 
@@ -46,11 +46,11 @@ export default function SettingsScreen( { navigation } )
 
 	async function playSound( soundFile )
 	{
-		const { sound } = await Audio.Sound.createAsync( soundFile );
-
-		setAudioSound( sound );
-
-		await sound.playAsync();
+//		const { sound } = await Audio.Sound.createAsync( soundFile );
+//
+//		setAudioSound( sound );
+//
+//		await sound.playAsync();
 	}
 
 	useEffect( () =>

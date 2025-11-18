@@ -1,4 +1,5 @@
 package com.omnienterprises.funeralcall;
+
 //
 //import com.omnienterprises.funeralcall.generated.BasePackageList;
 
@@ -13,7 +14,7 @@ import com.facebook.react.ReactPackage;
 
 import java.util.List;
 //import com.tsg.funeralcall.BuildConfig;
-
+//import com.omnienterprises.funeralcall.BuildConfig;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -24,6 +25,8 @@ public class MainApplication extends Application implements ReactApplication {
         @Override
         public boolean getUseDeveloperSupport() {
             return false;
+//            return BuildConfig.DEBUG;
+
         }
 
         @Override
