@@ -61,6 +61,16 @@ subprojects { subproject ->
         }
     }
 }
+// react-native-firebase v12.x isn't compatible with AGP 8's dependency analysis tasks.
+// Skip the failing unit test dependency checks to keep release builds working.
+subprojects { subproject ->
+    if (subproject.name.startsWith('react-native-firebase')) {
+        subproject.tasks.matching { it.name =~ /analyze.*UnitTestDependencies/ }.configureEach {
+            enabled = false
+        }
+    }
+}
+
 
 
 tasks.register("clean", Delete) {
