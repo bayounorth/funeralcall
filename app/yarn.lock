@@ -5593,6 +5593,13 @@ react-native-push-notification@^7.2.3:
   resolved "https://registry.npmjs.org/react-native-push-notification/-/react-native-push-notification-7.2.3.tgz"
   integrity sha512-MWwzGXGD22vQ35roDWBQ4EJl1jS4kuuAAdxqe2C88gULgzT6rQkR9wszl5b5K+hIWqve50qg4zJoSgarr//2KA==
 
+react-native-reanimated@^1.13.3:
+  version "1.13.3"
+  resolved "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-1.13.3.tgz"
+  integrity sha512-i714H24dv6ncpFO7/SZ0PfAMbvjgVbF8Ow2NPtowoZAz8osS54DmTMrkgJ9Za+uEku/s0AEaxqiXG2Xgntvv2g==
+  dependencies:
+    fbjs "^1.0.0"
+
 react-native-safe-area-context@^3.2.0:
   version "3.2.0"
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-3.2.0.tgz"
