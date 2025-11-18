@@ -43,7 +43,7 @@ allprojects {
 
 // Ensure legacy libraries that still declare BuildConfig fields keep generating them
 subprojects { subproject ->
-    if (subproject.name == 'react-native-vector-icons') {
+    if (subproject.name in ['react-native-vector-icons', 'react-native-screens']) {
         subproject.afterEvaluate {
             if (it.hasProperty('android') && it.android.hasProperty('buildFeatures')) {
                 it.android.buildFeatures.buildConfig = true
