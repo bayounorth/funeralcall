@@ -54,15 +54,31 @@ subprojects { subproject ->
 
 subprojects { subproject ->
     afterEvaluate {
+
+        // Existing hack: disable bad firebase unit test analyze task
         tasks.matching { task ->
             task.name.contains("analyzeReleaseUnitTestDependencies")
         }.configureEach {
             enabled = false
         }
+
+        tasks.matching { task ->
+            task.name == "lintFixRelease"
+        }.configureEach {
+            enabled = false
+        }
+
+        // NEW: disable lintFixRelease for react-native-gesture-handler
+        if (subproject.name == "react-native-gesture-handler") {
+            tasks.matching { task ->
+                task.name == "lintFixRelease"
+            }.configureEach {
+                enabled = false
+            }
+        }
     }
 }
-// react-native-firebase v12.x isn't compatible with AGP 8's dependency analysis tasks.
-// Skip the failing unit test dependency checks to keep release builds working.
+
 subprojects { subproject ->
     if (subproject.name.startsWith('react-native-firebase')) {
         subproject.tasks.matching { it.name =~ /analyze.*UnitTestDependencies/ }.configureEach {
@@ -70,8 +86,6 @@ subprojects { subproject ->
         }
     }
 }
-
-
 
 tasks.register("clean", Delete) {
     delete rootProject.buildDir

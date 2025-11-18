@@ -232,7 +232,6 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 
-
 afterEvaluate {
 
     // Make sure key tasks wait for the JS bundle copy
@@ -244,7 +243,11 @@ afterEvaluate {
         dependsOn("copyReleaseBundledJs")
     }
 
-    // Optional but harmless: other tasks that sometimes touch bundled output
+    tasks.matching { it.name == "sdkReleaseDependencyData" }.configureEach {
+        dependsOn("copyReleaseBundledJs")
+    }
+
+    // Optional but harmless
     tasks.matching {
         it.name == "mergeReleaseJavaResource" ||
                 it.name == "mergeReleaseNativeLibs" ||
@@ -254,7 +257,7 @@ afterEvaluate {
         dependsOn("copyReleaseBundledJs")
     }
 
-    // Ensure RN libs build before JS bundling (your existing logic)
+    // Ensure RN libs build before JS bundling
     def jsBundleTask = tasks.findByName("bundleReleaseJsAndAssets")
     if (jsBundleTask != null) {
         def deps = []
@@ -264,7 +267,14 @@ afterEvaluate {
                 ":react-native-community_masked-view",
                 ":react-native-firebase_app",
                 ":react-native-firebase_crashlytics",
-                ":react-native-firebase_messaging"
+                ":react-native-firebase_messaging",
+                ":react-native-contacts",
+                ":react-native-device-info",
+                ":react-native-svg",
+                ":react-native-gesture-handler",
+                ":react-native-safe-area-context",
+                ":react-native-screens",
+                ":react-native-translucent-modal"
         ].each { path ->
             def libProject = project.findProject(path)
             if (libProject != null) {
