@@ -14,7 +14,6 @@ import DialogInput from '../dialogs/dialogInput';
 import Toast from 'react-native-simple-toast';
 import DialogSaveContact from '../dialogs/dialogSaveContact';
 import DialogOKCancel from '../dialogs/dialogOKCancel';
-import * as SMS from 'expo-sms';
 import DialogContactList from '../dialogs/dialogContactList';
 import DialogCallPrompt from '../dialogs/dialogCallPrompt';
 import Contacts from 'react-native-contacts';
@@ -311,19 +310,19 @@ export default function MessageDetailScreen( { route, navigation } )
 	{
 		setModalContactListVisible( false );
 
-		SMS.sendSMSAsync
-			(
-				contact.phone,
-				buildSMSMessage( message )
-			)
-			.then
-			(
-				function( response ){}
-			)
-			.catch
-			(
-				function( error ){}
-			);
+//		SMS.sendSMSAsync
+//			(
+//				contact.phone,
+//				buildSMSMessage( message )
+//			)
+//			.then
+//			(
+//				function( response ){}
+//			)
+//			.catch
+//			(
+//				function( error ){}
+//			);
 	};
 
 	const onCellNumberPress = () =>
