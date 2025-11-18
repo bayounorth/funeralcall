@@ -1,0 +1,32 @@
+R_DEF: Internal format may change without notice
+local
+drawable notification
+integer react_native_dev_server_port
+integer react_native_inspector_proxy_port
+mipmap ic_launcher
+mipmap ic_launcher_round
+raw aurora
+raw chord
+raw circles
+raw coolnotification
+raw criticalalert
+raw firstcall
+raw generalmessage
+raw generalmessage2
+raw incoming
+raw iphoneoriginal
+raw notification
+raw onelime
+raw redalert
+raw tone
+raw whistle
+string app_name
+string com.google.firebase.crashlytics.mapping_file_id
+string default_web_client_id
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
+string project_id
+style AppTheme

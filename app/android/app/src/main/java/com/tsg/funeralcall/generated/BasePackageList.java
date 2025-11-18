@@ -1,18 +1,10 @@
-package com.omnienterprises.funeralcall.generated;
+package com.tsg.funeralcall.generated;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
-import org.unimodules.core.interfaces.Package;
 
 public class BasePackageList {
-  public List<Package> getPackageList() {
-    return Arrays.<Package>asList(
-        new expo.modules.av.AVPackage(),
-        new expo.modules.constants.ConstantsPackage(),
-        new expo.modules.filesystem.FileSystemPackage(),
-        new expo.modules.imageloader.ImageLoaderPackage(),
-        new expo.modules.permissions.PermissionsPackage(),
-        new expo.modules.sms.SMSPackage()
-    );
-  }
+    public List<Object> getPackageList() {
+        return Collections.emptyList();
+    }
 }

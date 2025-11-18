@@ -1,0 +1,4 @@
+int anim rns_slide_in_from_left 0x0
+int anim rns_slide_in_from_right 0x0
+int anim rns_slide_out_to_left 0x0
+int anim rns_slide_out_to_right 0x0

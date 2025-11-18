@@ -1,13 +1,13 @@
-package com.omnienterprises.funeralcall;
-
-import com.omnienterprises.funeralcall.generated.BasePackageList;
+//package com.omnienterprises.funeralcall;
+//
+//import com.omnienterprises.funeralcall.generated.BasePackageList;
 
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
-import com.github.amarcruz.rnshortcutbadge.RNAppBadgePackage;
-import com.oblador.vectoricons.VectorIconsPackage;
+
+
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -16,21 +16,19 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Arrays;
 
-import org.unimodules.adapters.react.ModuleRegistryAdapter;
-import org.unimodules.adapters.react.ReactModuleRegistryProvider;
-import org.unimodules.core.interfaces.SingletonModule;
-
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
+import com.tsg.funeralcall.BuildConfig;
+
 
 public class MainApplication extends Application implements ReactApplication {
 
-  private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), null);
+//  private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), null);
 
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {
         @Override
         public boolean getUseDeveloperSupport() {
-          return BuildConfig.DEBUG;
+            return false;
         }
 
         @Override
@@ -41,10 +39,10 @@ public class MainApplication extends Application implements ReactApplication {
           // packages.add(new MyReactNativePackage());
 
           // Add unimodules
-          List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(
-                  new ModuleRegistryAdapter(mModuleRegistryProvider)
-          );
-          packages.addAll(unimodules);
+//          List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(
+//                  new ModuleRegistryAdapter(mModuleRegistryProvider)
+//          );
+//          packages.addAll(unimodules);
 
           // packages.add(new ReactNativePushNotificationPackage());
 

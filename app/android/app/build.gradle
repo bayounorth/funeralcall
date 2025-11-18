@@ -266,7 +266,7 @@ afterEvaluate {
         dependsOn(
                 ":react-native-async-storage_async-storage:assembleRelease",
                 ":react-native-async-storage_async-storage:bundleLibCompileToJarRelease",
-                "react-native-async-storage_async-storage:extractDeepLinksRelease",
+                ":react-native-async-storage_async-storage:extractDeepLinksRelease",
                 ":react-native-community_masked-view:assembleRelease",
                 ":react-native-firebase_app:assembleRelease",
                 ":react-native-firebase_crashlytics:assembleRelease",
