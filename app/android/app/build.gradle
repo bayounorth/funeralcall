@@ -232,6 +232,20 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 afterEvaluate {
+
+    tasks.matching { it.name == "mergeExtDexRelease" }.configureEach {
+        dependsOn("copyReleaseBundledJs")
+    }
+
+    // (Optional but harmless) also hook a few other tasks that complain in RN builds
+    tasks.matching { it.name == "mergeReleaseJavaResource" ||
+            it.name == "mergeReleaseNativeLibs" ||
+            it.name == "stripReleaseDebugSymbols" ||
+            it.name == "processReleaseManifestForPackage" }.configureEach {
+        dependsOn("copyReleaseBundledJs")
+    }
+
+
     def jsBundleTask = tasks.findByName("bundleReleaseJsAndAssets")
     if (jsBundleTask != null) {
         def deps = []

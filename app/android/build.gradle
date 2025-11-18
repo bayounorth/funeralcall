@@ -52,6 +52,15 @@ subprojects { subproject ->
     }
 }
 
+subprojects { subproject ->
+    afterEvaluate {
+        tasks.matching { task ->
+            task.name.contains("analyzeReleaseUnitTestDependencies")
+        }.configureEach {
+            enabled = false
+        }
+    }
+}
 
 
 tasks.register("clean", Delete) {
