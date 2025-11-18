@@ -1,0 +1,106 @@
+[
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_coolnotification.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/coolnotification.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_chord.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/chord.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_whistle.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/whistle.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_onelime.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/onelime.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_generalmessage.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/generalmessage.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_notification.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/notification.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_aurora.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/aurora.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_firstcall.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/firstcall.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_circles.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/circles.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_redalert.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/redalert.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_tone.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/tone.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/drawable_notification.png.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/drawable/notification.png"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_criticalalert.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/criticalalert.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_incoming.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/incoming.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_generalmessage2.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/generalmessage2.mp3"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.omnienterprises.funeralcall.app-release-28:/raw_iphoneoriginal.mp3.flat",
+        "source": "com.omnienterprises.funeralcall.app-main-29:/raw/iphoneoriginal.mp3"
+    }
+]
