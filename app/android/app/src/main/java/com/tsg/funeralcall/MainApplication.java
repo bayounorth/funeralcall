@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Arrays;
 
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
-import com.tsg.funeralcall.BuildConfig;
+//import com.tsg.funeralcall.BuildConfig;
 
 
 public class MainApplication extends Application implements ReactApplication {
@@ -63,8 +63,8 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
-    SoLoader.init(this, /* native exopackage */ false);
-    initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+//    SoLoader.init(this, /* native exopackage */ false);
+//    initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
 
   /**
