@@ -83,6 +83,11 @@ project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
 ]
 
+project.ext.react = [
+        entryFile      : "index.js",
+        bundleInRelease: false
+]
+
 apply from: "../../node_modules/react-native/react.gradle"
 
 /**
@@ -234,7 +239,7 @@ task copyDownloadableDepsToLibs(type: Copy) {
 
 afterEvaluate {
 
-    // Make sure key tasks wait for the JS bundle copy
+    // Make sure key app tasks wait for the JS bundle copy
     tasks.matching { it.name == "mergeExtDexRelease" }.configureEach {
         dependsOn("copyReleaseBundledJs")
     }
@@ -247,7 +252,6 @@ afterEvaluate {
         dependsOn("copyReleaseBundledJs")
     }
 
-    // Optional but harmless
     tasks.matching {
         it.name == "mergeReleaseJavaResource" ||
                 it.name == "mergeReleaseNativeLibs" ||
@@ -258,34 +262,28 @@ afterEvaluate {
     }
 
     // Ensure RN libs build before JS bundling
-    def jsBundleTask = tasks.findByName("bundleReleaseJsAndAssets")
-    if (jsBundleTask != null) {
-        def deps = []
+    tasks.withType(Exec).matching { it.name == "bundleReleaseJsAndAssets" }.configureEach {
+        dependsOn(
+                ":react-native-async-storage_async-storage:assembleRelease",
+                ":react-native-async-storage_async-storage:bundleLibCompileToJarRelease",
+                "react-native-async-storage_async-storage:extractDeepLinksRelease",
+                ":react-native-community_masked-view:assembleRelease",
+                ":react-native-firebase_app:assembleRelease",
+                ":react-native-firebase_crashlytics:assembleRelease",
+                ":react-native-firebase_messaging:assembleRelease",
+                ":react-native-contacts:assembleRelease",
+                ":react-native-device-info:assembleRelease",
+                ":react-native-svg:assembleRelease",
+                ":react-native-gesture-handler:assembleRelease",
+                ":react-native-safe-area-context:assembleRelease",
+                ":react-native-screens:assembleRelease",
+                ":react-native-translucent-modal:assembleRelease",
+                ":react-native-vector-icons:assembleRelease",
+                ":react-native-push-notification:assembleRelease"
+        )
 
-        [
-                ":react-native-async-storage_async-storage",
-                ":react-native-community_masked-view",
-                ":react-native-firebase_app",
-                ":react-native-firebase_crashlytics",
-                ":react-native-firebase_messaging",
-                ":react-native-contacts",
-                ":react-native-device-info",
-                ":react-native-svg",
-                ":react-native-gesture-handler",
-                ":react-native-safe-area-context",
-                ":react-native-screens",
-                ":react-native-translucent-modal",
-                ":react-native-vector-icons"
-        ].each { path ->
-            def libProject = project.findProject(path)
-            if (libProject != null) {
-                libProject.tasks.matching { it.name.toLowerCase().contains("release") }.all { t ->
-                    deps << t
-                }
-            }
-        }
-
-        jsBundleTask.dependsOn deps
+        // Optional but helps avoid Gradle state-tracking complaints
+        doNotTrackState("React Native bundle task reads external inputs and is not incremental")
     }
 }
 
