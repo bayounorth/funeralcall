@@ -1,4 +1,4 @@
-//package com.omnienterprises.funeralcall;
+package com.tsg.funeralcall;
 //
 //import com.omnienterprises.funeralcall.generated.BasePackageList;
 
